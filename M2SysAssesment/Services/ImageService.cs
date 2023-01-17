@@ -46,25 +46,25 @@ namespace M2SysAssesment.Services
                     {
                         if (response.IsSuccessStatusCode)
                         {
-                             var imageExtension = Path.GetExtension(url);
+                            var fileType = GetImageFormat(response.Content.ReadAsByteArrayAsync().Result);
+                            if (fileType == ImageFormat.unknown)
+                                return;
 
-                             if(string.IsNullOrEmpty(imageExtension) || imageExtension.Length > 4)
-                                imageExtension = GetImageFormat(response.Content.ReadAsByteArrayAsync().Result);
-
-                            var fileName = string.Concat(GetImageName, imageExtension);
+                            var fileName = GetImageName(fileType);
 
                             var filePath = Path.Combine(path, fileName);
 
                             using (var fileStream = new FileStream(filePath, FileMode.Create))
                             {
-                                
-
                                 await response.Content.CopyToAsync(fileStream);
                                 urlAndNames.Add(url, fileName);
                             }
                         }
                     }
                 });
+
+                if(!urlAndNames.Any())
+                    return ResponseHelper.FailDownloadResponse();
 
                 return ResponseHelper.SuccessDownloadResponse(urlAndNames);
             }
@@ -76,8 +76,6 @@ namespace M2SysAssesment.Services
 
         public ResponseData GetImageByName(string imageName)
         {
-            
-            //imageName = string.Concat(imageName, ".jpg");
             var filepath = Path.Combine(_webHostEnvironment.WebRootPath, Constants.DownloadImagePath, imageName);
 
             if (!File.Exists(filepath))
@@ -93,23 +91,23 @@ namespace M2SysAssesment.Services
             var contents = File.ReadAllBytes(filepath);
             return $"data:image/{fileExtension};base64,{Convert.ToBase64String(contents)}";
         }
-        private string GetImageFormat(byte[] bytes)
+        private ImageFormat GetImageFormat(byte[] bytes)
         {
             var png = new byte[] { 137, 80, 78, 71 };              // PNG                                                                   
             var jpeg = new byte[] { 255, 216, 255, 224 };          // jpeg
             var jpeg2 = new byte[] { 255, 216, 255, 225 };         // jpeg canon
 
             if (png.SequenceEqual(bytes.Take(png.Length)))
-                return "png";
+                return ImageFormat.png;
 
             else if (jpeg.SequenceEqual(bytes.Take(jpeg.Length)))
-                return ".jpg";
+                return ImageFormat.jpeg;
 
             else if (jpeg2.SequenceEqual(bytes.Take(jpeg2.Length)))
-                return ".jpeg";
+                return ImageFormat.jpeg;
 
-            return "";
+            return  ImageFormat.unknown;
         }
-        private string GetImageName => $"Pic-{Guid.NewGuid().ToString()}";
+        private string GetImageName(ImageFormat format) => $"Pic-{Guid.NewGuid().ToString()}.{format}";
     }
 }

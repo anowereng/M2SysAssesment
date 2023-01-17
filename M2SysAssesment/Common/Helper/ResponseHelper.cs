@@ -22,6 +22,8 @@ namespace M2SysAssesment.Common.Helper
        new ResponseData() { Message = Constants.Message.ExceptionMessage, Data = data, Success = true };
         public static ResponseData NotFoundFileResponse() =>
         new ResponseData() { Message = Constants.Message.NotFound, Data = null, Success = true };
+        public static ResponseDownload UnknownFormat(object data) =>
+            new ResponseDownload() { Message = Constants.Message.UnknownFormat, UrlAndNames = (IDictionary<string, string>)data, Success = false };
 
     }
 }
