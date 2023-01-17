@@ -7,13 +7,21 @@ namespace M2SysAssesment.Common.Helper
 {
     public static class Constants
     {
-        #region Replaceable Messages
-        public static readonly string NotFound = "{0} not found";
-        public static readonly string Invalid = "{0} is invalid";
+        #region Messages
+        public static class Message
+        {
+            #region Replaceable Messages
+            public static readonly string NotFound = "{0} not found";
+            public static readonly string Invalid = "{0} is invalid";
+            #endregion
+            public static readonly string ExceptionMessage = "Something went wrong. Please try after sometime.";
+            public static readonly string UrlExists = "Some url are duplicate";
+            public static readonly string AddSuccess = "File Added successfully";
+            public static readonly string ImageListNullOrEmpty = "Image list are empty or null can't valid";
+        }
         #endregion
-        public static readonly string ExceptionMessage = "Something went wrong. Please try after sometime.";
-        public static readonly string UrlExists = "Some url are duplicate";
-        public static readonly string AddSuccess = "File Added successfully";
-        public static readonly string ImageListNullOrEmpty = "Image list are empty or null can't valid";
+
+        public static string RoothPath => "wwwroot";
+        public static string DownloadImagePath => $"{RoothPath}/download-images";
     }
 }

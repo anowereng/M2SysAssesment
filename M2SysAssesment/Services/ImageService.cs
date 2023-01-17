@@ -16,7 +16,7 @@ namespace M2SysAssesment.Services
                 if (requestDownload.ImageUrls.IsNullOrEmpty())
                     return ResponseHelper.ValidationEmptyListResponse();
 
-                var path = Path.Combine("wwwroot/download-images");
+                var path = Constants.DownloadImagePath;
 
                 if (!Directory.Exists(path))
                     Directory.CreateDirectory(path);
@@ -35,7 +35,7 @@ namespace M2SysAssesment.Services
                     {
                         if (response.IsSuccessStatusCode)
                         {
-                            var fileName = $"Pic-{Guid.NewGuid().ToString()}.jpg";
+                            var fileName = GetImageName;
 
                             var filePath = Path.Combine(Directory.GetCurrentDirectory(), path, fileName);
 
@@ -56,5 +56,7 @@ namespace M2SysAssesment.Services
                 return ResponseHelper.FailDownloadResponse();
             }
         }
+
+        private string GetImageName => $"Pic-{Guid.NewGuid().ToString()}.jpg";
     }
 }
