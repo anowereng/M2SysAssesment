@@ -28,8 +28,17 @@ namespace M2SysAssesment.Controllers
             else
                 return BadRequest(response);
         }
+        [HttpGet]
+        [Route("get-image-by-name/{image_name}")]
+        public IActionResult GetImageByName(string image_name)
+        {
+            var response = _imageService.GetImageByName(image_name);
 
-       
+            if (response.Success)
+                return Ok(response);
+            else
+                return BadRequest(response);
+        }
 
     }
 }
