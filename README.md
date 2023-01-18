@@ -19,12 +19,11 @@
     
 ### Tools and packages
 Project is created with: 
-```
+
 * .net6.0 (REST API Project)
 * Swashbuckle.AspNetCore Ver.6.2.3
 * Microsoft.Extensions.DependencyInjection.Abstractions
 
-```
 [Run your project in vs 2022]
 
 ### Installation
