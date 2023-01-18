@@ -7,6 +7,7 @@
     │   ├── Conrollers                          # End-to-end, integration tests (alternatively `e2e`)
     │        └── ImageController                # Download request , base64 API 
     └── ......
+    .
     ├── M2SysAssesent.Services                  
     │   ├── Common 
     |   |     └── Enums                         # All enums ( image type) contains here
@@ -16,4 +17,12 @@
     |   ├── ResponseModel                       
     |   ├── Services
     └── ......
+    
+     .
+    ├── ...
+    ├── test                    # Test files (alternatively `spec` or `tests`)
+    │   ├── benchmarks          # Load and stress tests
+    │   ├── integration         # End-to-end, integration tests (alternatively `e2e`)
+    │   └── unit                # Unit tests
+    └── ...
 
