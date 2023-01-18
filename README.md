@@ -38,7 +38,7 @@ dotnet run M2SysAssesment.API.csproj
 
 ![image](https://user-images.githubusercontent.com/14024760/213253087-e8535338-31f1-4d40-a7b7-9e8ceb2c7c05.png)
 
-Paste Browser 
+Copy url (https://localhost:7135) from console and paste postman or type browser below url link . 
 ```
 https://localhost:7135/swagger/index.html
 ```
