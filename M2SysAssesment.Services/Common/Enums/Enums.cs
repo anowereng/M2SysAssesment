@@ -1,4 +1,4 @@
-﻿namespace M2SysAssesment.Common.Enums
+﻿namespace M2SysAssesment.Services.Common.Enums
 {
     public class Enums
     {

@@ -1,9 +1,4 @@
-﻿using Microsoft.AspNetCore.SignalR;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace M2SysAssesment.Common.Helper
+﻿namespace M2SysAssesment.Services.Common.Helper
 {
     public static class Constants
     {
@@ -24,7 +19,6 @@ namespace M2SysAssesment.Common.Helper
         }
         #endregion
 
-        //public static string RoothPath => "wwwroot";
         public static string DownloadImagePath => $"download-images";
     }
 }

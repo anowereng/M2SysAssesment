@@ -1,8 +1,10 @@
-﻿using M2SysAssesment.Common.Helper;
-using M2SysAssesment.RequestModel;
-using M2SysAssesment.ResponseModel;
+﻿using M2SysAssesment.Services.Common.Extensions;
+using M2SysAssesment.Services.Common.Helper;
+using M2SysAssesment.Services.RequestModel;
+using M2SysAssesment.Services.ResponseModel;
+using Microsoft.AspNetCore.Hosting;
 using System.IO;
-using static M2SysAssesment.Common.Enums.Enums;
+using static M2SysAssesment.Services.Common.Enums.Enums;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace M2SysAssesment.Services

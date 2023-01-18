@@ -1,4 +1,4 @@
-﻿namespace M2SysAssesment.Common.Helper
+﻿namespace M2SysAssesment.Services.Common.Extensions
 {
     public static class IEnumerableExtensions
     {

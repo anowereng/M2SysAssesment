@@ -1,5 +1,5 @@
-﻿using M2SysAssesment.RequestModel;
-using M2SysAssesment.ResponseModel;
+﻿using M2SysAssesment.Services.RequestModel;
+using M2SysAssesment.Services.ResponseModel;
 
 namespace M2SysAssesment.Services
 {

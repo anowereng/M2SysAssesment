@@ -1,12 +1,9 @@
-using M2SysAssesment.Common.Helper;
-using M2SysAssesment.RequestModel;
-using M2SysAssesment.ResponseModel;
 using M2SysAssesment.Services;
+using M2SysAssesment.Services.RequestModel;
+using M2SysAssesment.Services.ResponseModel;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
-using System.Net.Http.Headers;
 
-namespace M2SysAssesment.Controllers
+namespace M2SysAssesment.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -19,6 +16,7 @@ namespace M2SysAssesment.Controllers
         }
 
         [HttpPost("DownloadRequestImages")]
+        [ProducesResponseType(typeof(ResponseDownload), StatusCodes.Status200OK)]
         public async Task<IActionResult> Post([FromBody] RequestDownload requestDownload)
         {
             var response  = await _imageService.Download(requestDownload);
@@ -29,6 +27,7 @@ namespace M2SysAssesment.Controllers
                 return BadRequest(response);
         }
         [HttpGet]
+        [ProducesResponseType(typeof(ResponseData), StatusCodes.Status200OK)]
         [Route("get-image-by-name/{image_name}")]
         public IActionResult GetImageByName(string image_name)
         {

@@ -1,7 +1,7 @@
-﻿using M2SysAssesment.ResponseModel;
+﻿using M2SysAssesment.Services.ResponseModel;
 using System.Net;
 
-namespace M2SysAssesment.Common.Helper
+namespace M2SysAssesment.Services.Common.Helper
 {
     public static class ResponseHelper
     {

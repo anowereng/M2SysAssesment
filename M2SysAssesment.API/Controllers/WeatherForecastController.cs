@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace M2SysAssesment.Controllers
+namespace M2SysAssesment.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]

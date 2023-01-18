@@ -1,4 +1,4 @@
-﻿namespace M2SysAssesment.RequestModel
+﻿namespace M2SysAssesment.Services.RequestModel
 {
     public class RequestDownload
     {
