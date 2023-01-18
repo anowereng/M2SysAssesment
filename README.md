@@ -1,4 +1,4 @@
-# Asynchronous image donload and base 64 convert user guidline .
+# Asynchronous image donload and base 64 convert user guideline .
 
 ## Project Folder Structure
     .
