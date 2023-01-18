@@ -5,7 +5,7 @@
     ├── M2SysAssesent.API                  
     │   ├── wwwroot                             # contains upload images
     │   ├── Conrollers                          # End-to-end, integration tests (alternatively `e2e`)
-    │        └── ImageController                # Download request , base64 API 
+    │        └── ImageController                # Download request (POST) , base64 API End point apply here. 
     └── ......
     ├── M2SysAssesent.Services                  
     │   ├── Common 
