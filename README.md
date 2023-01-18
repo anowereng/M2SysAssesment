@@ -71,6 +71,11 @@ https://localhost:7135/swagger/index.html
 ![image](https://user-images.githubusercontent.com/14024760/213263746-dfdb5bbe-e2ce-4129-9354-fb88ec709de2.png)
 ![image](https://user-images.githubusercontent.com/14024760/213263784-e5120d43-7ca6-4a0a-9c98-205db4a07b07.png)
 
+### Base64 to iamge convert test online 
+![Screenshot_1](https://user-images.githubusercontent.com/14024760/213265115-05cf64eb-47f5-42b3-8a26-286b476d9c4f.png)
+
+
+
 
 
 
