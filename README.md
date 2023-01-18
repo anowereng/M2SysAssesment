@@ -63,10 +63,14 @@ https://localhost:7135/swagger/index.html
 ### Output
 
 ## Download request (POST)
-![image](https://user-images.githubusercontent.com/14024760/213263397-06fbd52d-55c3-4abe-a4db-6737ad00fb15.png)
+![image](https://user-images.githubusercontent.com/14024760/213263587-9ab11cb1-3e8e-4da1-a82b-c1c72c72cd81.png)
+![image](https://user-images.githubusercontent.com/14024760/213263693-516dde7c-4a86-49fe-9a33-908e5aafe55c.png)
+
 
 ## Get Image By Name(GET)
-![image](https://user-images.githubusercontent.com/14024760/213263129-7017180a-7306-4cb7-800f-f961723e3cf4.png)
+![image](https://user-images.githubusercontent.com/14024760/213263746-dfdb5bbe-e2ce-4129-9354-fb88ec709de2.png)
+![image](https://user-images.githubusercontent.com/14024760/213263784-e5120d43-7ca6-4a0a-9c98-205db4a07b07.png)
+
 
 
 
