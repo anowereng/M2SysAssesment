@@ -5,13 +5,13 @@
     ├── M2SysAssesent.API                  
     │   ├── wwwroot                             # contains upload images
     │   ├── Conrollers                          
-    │        └── ImageController                # Download request (POST) , base64 image (GET) End API apply here. 
+    │        └── ImageController                # Download request (POST) , base64 image (GET) end point API here. 
     └── ......
     ├── M2SysAssesent.Services                  
     │   ├── Common 
-    |   |     └── Enums                         # All enums ( image type) contains here
-    |   |     └── Extensions                    #  Extensions apply for duplicate find out and list empty check .   
-    |   |     └── Helper                        # API Response and hard code message apply here . 
+    |   |     └── Enums                         
+    |   |     └── Extensions                    # Extensions apply for duplicate find out and list empty check .   
+    |   |     └── Helper                        # API Response functionality and constant message write here . 
     │   ├── RequestModel                       
     |   ├── ResponseModel                       
     |   ├── Services
@@ -65,13 +65,13 @@ https://localhost:7135/swagger/index.html
 ## Download request (POST)
 ![image](https://user-images.githubusercontent.com/14024760/213263587-9ab11cb1-3e8e-4da1-a82b-c1c72c72cd81.png)
 ![image](https://user-images.githubusercontent.com/14024760/213263693-516dde7c-4a86-49fe-9a33-908e5aafe55c.png)
+![image](https://user-images.githubusercontent.com/14024760/213266395-a505cf3a-a0f3-4109-8475-cba9da9a81aa.png)
 
-
-## Get Image By Name(GET)
+## Get Image By Name (GET)
 ![image](https://user-images.githubusercontent.com/14024760/213263746-dfdb5bbe-e2ce-4129-9354-fb88ec709de2.png)
 ![image](https://user-images.githubusercontent.com/14024760/213263784-e5120d43-7ca6-4a0a-9c98-205db4a07b07.png)
 
-### Base64 to iamge convert test online 
+## Online test Base64 to Image
 ![Screenshot_1](https://user-images.githubusercontent.com/14024760/213265115-05cf64eb-47f5-42b3-8a26-286b476d9c4f.png)
 
 
