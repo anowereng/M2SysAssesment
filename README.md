@@ -1,6 +1,6 @@
-# Image Download Urls and Base 64 Convert
+# Asynchronous image donload and base 64 convert user guidline .
 
-### Project Folder Structure
+## Project Folder Structure
     .
     ├── M2SysAssesent.API                  
     │   ├── wwwroot                             # contains upload images
@@ -17,7 +17,7 @@
     |   ├── Services
     └── ......
     
-### Tools and packages
+## Tools and packages
 Project is created with: 
 
 * .net6.0 (REST API Project)
@@ -43,7 +43,7 @@ https://localhost:7135/swagger/index.html
 ```
 ![image](https://user-images.githubusercontent.com/14024760/213257188-7e8daea1-060a-4d76-b030-74e25e1b7f82.png)
 
-### Demo Data for test 
+## Demo Data for test 
 
 ```
 {
@@ -60,14 +60,14 @@ https://localhost:7135/swagger/index.html
   "maxDownloadAtOnce": 2
 }
 ```
-### Output
+## API end point check
 
-## Download request (POST)
+### Download request (POST)
 ![image](https://user-images.githubusercontent.com/14024760/213263587-9ab11cb1-3e8e-4da1-a82b-c1c72c72cd81.png)
 ![image](https://user-images.githubusercontent.com/14024760/213263693-516dde7c-4a86-49fe-9a33-908e5aafe55c.png)
 ![image](https://user-images.githubusercontent.com/14024760/213266395-a505cf3a-a0f3-4109-8475-cba9da9a81aa.png)
 
-## Get Image By Name (GET)
+### Get Image By Name (GET)
 ![image](https://user-images.githubusercontent.com/14024760/213263746-dfdb5bbe-e2ce-4129-9354-fb88ec709de2.png)
 ![image](https://user-images.githubusercontent.com/14024760/213263784-e5120d43-7ca6-4a0a-9c98-205db4a07b07.png)
 
