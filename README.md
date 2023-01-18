@@ -16,6 +16,16 @@
     |   ├── ResponseModel                       
     |   ├── Services
     └── ......
+    
+### Tools and packages
+
+```
+.net6.0
+Swashbuckle.AspNetCore Ver.6.2.3
+Microsoft.Extensions.DependencyInjection.Abstractions
+
+```
+[Run your project in vs 2022]
 
 ### Installation
 
