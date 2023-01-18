@@ -2,12 +2,12 @@
 
 ## Project Folder Structure
     .
-    ├── M2SysAssesent.API                  
+    ├── M2SysAssesment.API                  
     │   ├── wwwroot                             # contains upload images
     │   ├── Conrollers                          
     │        └── ImageController                # Download request (POST) , base64 image (GET) end point API here. 
     └── ......
-    ├── M2SysAssesent.Services                  
+    ├── M2SysAssesment.Services                  
     │   ├── Common 
     |   |     └── Enums                         
     |   |     └── Extensions                    # Extensions apply for duplicate find out and list empty check .   
