@@ -43,7 +43,6 @@ https://localhost:7135/swagger/index.html
 ```
 ![image](https://user-images.githubusercontent.com/14024760/213257188-7e8daea1-060a-4d76-b030-74e25e1b7f82.png)
 
-
 ### Demo Data for test 
 
 ```
@@ -61,5 +60,15 @@ https://localhost:7135/swagger/index.html
   "maxDownloadAtOnce": 2
 }
 ```
+### Output
+
+## Download request (POST)
+![image](https://user-images.githubusercontent.com/14024760/213262711-821df807-3beb-4380-be14-d3c46b9bc732.png)
+
+## Get Image By Name(GET)
+![image](https://user-images.githubusercontent.com/14024760/213263129-7017180a-7306-4cb7-800f-f961723e3cf4.png)
+
+
+
 
 
