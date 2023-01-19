@@ -27,10 +27,10 @@ namespace M2SysAssesment.Services
             if (requestDownload.ImageUrls.IsNullOrEmpty())
                 return ResponseHelper.DownloadResponse(Constants.Message.ImageListNullOrEmpty);
 
-            var path = Path.Combine(_webHostEnvironment.WebRootPath, Constants.Message.ImageListNullOrEmpty);
+            var path = Path.Combine(_webHostEnvironment.WebRootPath, Constants.DownloadImagePath);
 
             if (!Directory.Exists(path))
-                Directory.CreateDirectory(Constants.DownloadImagePath);
+                Directory.CreateDirectory(path);
 
             var urlAndNames = new Dictionary<string, string>();
 
