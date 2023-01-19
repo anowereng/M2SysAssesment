@@ -4,7 +4,7 @@
 ## Project folder structure
     .
     ├── M2SysAssesment.API                  
-    │   ├── wwwroot                             # contains upload images
+    │   ├── wwwroot                             # Contains upload images
     │   ├── Conrollers                          
     │        └── ImageController                # Download request (POST) , base64 image (GET) end point API here. 
     └── ......
@@ -22,6 +22,7 @@
 ## Tools and packages
 Project is created with: 
 
+* VS 2022
 * .NET 6.0 (REST API Project)
 * Swashbuckle.AspNetCore (Ver.6.2.3)
 * Microsoft.Extensions.DependencyInjection.Abstractions
