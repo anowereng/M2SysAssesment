@@ -30,7 +30,7 @@ namespace M2SysAssesment.Services
             var path = Path.Combine(_webHostEnvironment.WebRootPath, Constants.Message.ImageListNullOrEmpty);
 
             if (!Directory.Exists(path))
-                Directory.CreateDirectory(path);
+                Directory.CreateDirectory(Constants.DownloadImagePath);
 
             var urlAndNames = new Dictionary<string, string>();
 

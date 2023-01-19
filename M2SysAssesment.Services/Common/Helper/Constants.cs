@@ -13,8 +13,8 @@
             public static readonly string UrlExists = "Some url are duplicate";
             public static readonly string AddSuccess = "File Added successfully";
             public static readonly string Success = "Success";
-            public static readonly string ImageListNullOrEmpty = "Image list are empty or null can't valid";
-            public static readonly string MaxDownloadAtOnce = "Please set minimum level";
+            public static readonly string ImageListNullOrEmpty = "Image list empty or null can't valid";
+            public static readonly string MaxDownloadAtOnce = "Please input valid value";
             public static readonly string UnknownFormat = "Unknown format are not allowed";
         }
         #endregion
