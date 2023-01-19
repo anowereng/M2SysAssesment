@@ -1,6 +1,6 @@
-# Asynchronous image download and base 64 convert user guideline .
+# Asynchronously image download and image to base64 .
 
-## Project Folder Structure
+## Project folder structure
     .
     ├── M2SysAssesment.API                  
     │   ├── wwwroot                             # contains upload images
@@ -11,7 +11,8 @@
     │   ├── Common 
     |   |     └── Enums                         
     |   |     └── Extensions                    # Extensions apply for duplicate find out and list empty check .   
-    |   |     └── Helper                        # API Response functionality and constant message write here . 
+    |   |     └── Helper                        # API Response functionality and constant message write here .
+    |   ├── Middleware                          # Golbal exception middleware apply .    
     │   ├── RequestModel                       
     |   ├── ResponseModel                       
     |   ├── Services
@@ -20,8 +21,8 @@
 ## Tools and packages
 Project is created with: 
 
-* .net6.0 (REST API Project)
-* Swashbuckle.AspNetCore Ver.6.2.3
+* .NET 6.0 (REST API Project)
+* Swashbuckle.AspNetCore (Ver.6.2.3)
 * Microsoft.Extensions.DependencyInjection.Abstractions
 
 [Run your project in vs 2022]
@@ -43,7 +44,7 @@ https://localhost:7135/swagger/index.html
 ```
 ![image](https://user-images.githubusercontent.com/14024760/213257188-7e8daea1-060a-4d76-b030-74e25e1b7f82.png)
 
-## Demo Data for test 
+## Demo data for test 
 
 ```
 {
@@ -67,11 +68,11 @@ https://localhost:7135/swagger/index.html
 ![image](https://user-images.githubusercontent.com/14024760/213263693-516dde7c-4a86-49fe-9a33-908e5aafe55c.png)
 ![image](https://user-images.githubusercontent.com/14024760/213266395-a505cf3a-a0f3-4109-8475-cba9da9a81aa.png)
 
-### Get Image By Name (GET)
+### Get image(base64) by name (GET)
 ![image](https://user-images.githubusercontent.com/14024760/213263746-dfdb5bbe-e2ce-4129-9354-fb88ec709de2.png)
 ![image](https://user-images.githubusercontent.com/14024760/213263784-e5120d43-7ca6-4a0a-9c98-205db4a07b07.png)
 
-## Online test Base64 to Image
+## Online test (base64 to image)
 ![Screenshot_1](https://user-images.githubusercontent.com/14024760/213265115-05cf64eb-47f5-42b3-8a26-286b476d9c4f.png)
 
 
