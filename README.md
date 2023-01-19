@@ -1,5 +1,5 @@
 ## Project
-### Asynchronously image download and image to base64 .
+### Asynchronously image download and image to base64 convert.
 
 ## Project folder structure
     .
