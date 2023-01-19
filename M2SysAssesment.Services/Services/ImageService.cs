@@ -18,62 +18,64 @@ namespace M2SysAssesment.Services
         }
         public async Task<ResponseDownload> Download(RequestDownload requestDownload)
         {
-            try
+            //try
+            //{
+            throw new InvalidOperationException();
+
+            if (requestDownload.MaxDownloadAtOnce == 0)
+                return ResponseHelper.DownloadResponse(Constants.Message.MaxDownloadAtOnce);
+
+            if (requestDownload.ImageUrls.AreAnyDuplicates())
+                return ResponseHelper.DownloadResponse(Constants.Message.UrlExists);
+
+            if (requestDownload.ImageUrls.IsNullOrEmpty())
+                return ResponseHelper.DownloadResponse(Constants.Message.ImageListNullOrEmpty);
+
+            var path = Path.Combine(_webHostEnvironment.WebRootPath, Constants.Message.ImageListNullOrEmpty);
+
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
+
+            var urlAndNames = new Dictionary<string, string>();
+
+            var client = new HttpClient();
+            var options = new ParallelOptions() { MaxDegreeOfParallelism = requestDownload.MaxDownloadAtOnce };
+
+            await Parallel.ForEachAsync(requestDownload.ImageUrls, options, async (url, cancellationToken) =>
             {
-                if (requestDownload.MaxDownloadAtOnce == 0)
-                    return ResponseHelper.ValidationMaxDownloadAtOnce();
+                HttpRequestMessage requestMessage = new HttpRequestMessage(HttpMethod.Get, url);
+                requestMessage.Headers.Add("User-Agent", "Other");
 
-                if (requestDownload.ImageUrls.AreAnyDuplicates())
-                    return ResponseHelper.ValidationExistUrlResponse();
-
-                if (requestDownload.ImageUrls.IsNullOrEmpty())
-                    return ResponseHelper.ValidationEmptyListResponse();
-
-                var path = Path.Combine(_webHostEnvironment.WebRootPath, Constants.DownloadImagePath);
-
-                if (!Directory.Exists(path))
-                    Directory.CreateDirectory(path);
-
-                var urlAndNames = new Dictionary<string, string>();
-
-                var client = new HttpClient();
-                var options = new ParallelOptions() { MaxDegreeOfParallelism = requestDownload.MaxDownloadAtOnce };
-
-                await Parallel.ForEachAsync(requestDownload.ImageUrls, options, async (url, cancellationToken) =>
+                using (var response = await client.SendAsync(requestMessage))
                 {
-                    HttpRequestMessage requestMessage = new HttpRequestMessage(HttpMethod.Get, url);
-                    requestMessage.Headers.Add("User-Agent", "Other");
-
-                    using (var response = await client.SendAsync(requestMessage))
+                    if (response.IsSuccessStatusCode)
                     {
-                        if (response.IsSuccessStatusCode)
+                        var fileType = GetImageFormat(response.Content.ReadAsByteArrayAsync().Result);
+                        if (fileType == ImageFormat.unknown)
+                            return;
+
+                        var fileName = GetImageName(fileType);
+
+                        var filePath = Path.Combine(path, fileName);
+
+                        using (var fileStream = new FileStream(filePath, FileMode.Create))
                         {
-                            var fileType = GetImageFormat(response.Content.ReadAsByteArrayAsync().Result);
-                            if (fileType == ImageFormat.unknown)
-                                return;
-
-                            var fileName = GetImageName(fileType);
-
-                            var filePath = Path.Combine(path, fileName);
-
-                            using (var fileStream = new FileStream(filePath, FileMode.Create))
-                            {
-                                await response.Content.CopyToAsync(fileStream);
-                                urlAndNames.Add(url, fileName);
-                            }
+                            await response.Content.CopyToAsync(fileStream);
+                            urlAndNames.Add(url, fileName);
                         }
                     }
-                });
+                }
+            });
 
-                if(!urlAndNames.Any())
-                    return ResponseHelper.FailDownloadResponse();
+            if (!urlAndNames.Any())
+                return ResponseHelper.DownloadResponse(Constants.Message.ExceptionMessage);
 
-                return ResponseHelper.SuccessDownloadResponse(urlAndNames);
-            }
-            catch (Exception ex)
-            {
-                return ResponseHelper.FailDownloadResponse();
-            }
+            return ResponseHelper.DownloadResponse(Constants.Message.AddSuccess, urlAndNames);
+            //}
+            //catch (Exception ex)
+            //{
+            //    return ResponseHelper.DownloadResponse(Constants.Message.ExceptionMessage);
+            //}
         }
 
         public ResponseData GetImageByName(string imageName)
@@ -81,14 +83,14 @@ namespace M2SysAssesment.Services
             var filepath = Path.Combine(_webHostEnvironment.WebRootPath, Constants.DownloadImagePath, imageName);
 
             if (!File.Exists(filepath))
-                return ResponseHelper.NotFoundFileResponse();
+                return ResponseHelper.Error(string.Format(Constants.Message.NotFound, imageName));
 
             var result = Base64ImgString(filepath);
-            return ResponseHelper.SuccessGetResponse(result);
+            return ResponseHelper.Success(Constants.Message.Success, result);
         }
         private string Base64ImgString(string filepath)
         {
-          
+
             var fileExtension = Path.GetExtension(filepath);
             var contents = File.ReadAllBytes(filepath);
             return $"data:image/{fileExtension};base64,{Convert.ToBase64String(contents)}";
@@ -108,7 +110,7 @@ namespace M2SysAssesment.Services
             else if (jpeg2.SequenceEqual(bytes.Take(jpeg2.Length)))
                 return ImageFormat.jpeg;
 
-            return  ImageFormat.unknown;
+            return ImageFormat.unknown;
         }
         private string GetImageName(ImageFormat format) => $"Pic-{Guid.NewGuid().ToString()}.{format}";
     }

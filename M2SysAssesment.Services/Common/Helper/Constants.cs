@@ -9,7 +9,7 @@
             public static readonly string NotFound = "{0} not found";
             public static readonly string Invalid = "{0} is invalid";
             #endregion
-            public static readonly string ExceptionMessage = "Something went wrong. Please try after sometime.";
+            public static readonly string ExceptionMessage = "Internal Server errors.";
             public static readonly string UrlExists = "Some url are duplicate";
             public static readonly string AddSuccess = "File Added successfully";
             public static readonly string Success = "Success";
