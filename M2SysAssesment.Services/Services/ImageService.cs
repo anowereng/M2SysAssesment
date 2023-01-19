@@ -18,10 +18,6 @@ namespace M2SysAssesment.Services
         }
         public async Task<ResponseDownload> Download(RequestDownload requestDownload)
         {
-            //try
-            //{
-            throw new InvalidOperationException();
-
             if (requestDownload.MaxDownloadAtOnce == 0)
                 return ResponseHelper.DownloadResponse(Constants.Message.MaxDownloadAtOnce);
 
@@ -71,11 +67,6 @@ namespace M2SysAssesment.Services
                 return ResponseHelper.DownloadResponse(Constants.Message.ExceptionMessage);
 
             return ResponseHelper.DownloadResponse(Constants.Message.AddSuccess, urlAndNames);
-            //}
-            //catch (Exception ex)
-            //{
-            //    return ResponseHelper.DownloadResponse(Constants.Message.ExceptionMessage);
-            //}
         }
 
         public ResponseData GetImageByName(string imageName)
